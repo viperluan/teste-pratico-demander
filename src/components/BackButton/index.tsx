@@ -9,7 +9,11 @@ const BackButton = (props: PropsWithChildren<IBackButtonProps>) => {
   const navigate = useNavigate();
 
   return (
-    <button onClick={() => navigate(-1)} {...props}>
+    <button
+      className="bg-slate-700 py-2 px-4 rounded"
+      onClick={() => navigate(-1)}
+      {...props}
+    >
       {props.children}
     </button>
   );
