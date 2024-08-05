@@ -5,7 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import { Home } from "./pages/home";
 import { Converter } from "./pages/converter";
-import { TreeMap } from "./pages/treeMap";
+import { TreeMap } from "./pages/treemap";
 
 const router = createBrowserRouter([
   {
