@@ -1,5 +1,13 @@
+import { BackButton } from "../../components/BackButton";
+
 const Converter = () => {
-  return <h1>Converter</h1>;
+  return (
+    <>
+      <BackButton>Voltar</BackButton>
+
+      <h1>Converter</h1>
+    </>
+  );
 };
 
 export { Converter };
