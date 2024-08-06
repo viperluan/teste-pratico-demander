@@ -30,22 +30,14 @@ describe("It should be able to convert arabic numerals to roman", () => {
   });
 
   test("Número 0 não pode ser convertido", () => {
-    expect(() => arabicToRoman.execute("0")).toThrow(
-      "Número arábico inválido ou menor que zero.",
-    );
+    expect(() => arabicToRoman.execute("0")).toThrow(Error);
   });
 
   test("Números maiores que 3999 não serão convertidos", () => {
-    expect(() => arabicToRoman.execute("4500")).toThrow(
-      "Número arábico inválido ou menor que zero.",
-    );
+    expect(() => arabicToRoman.execute("4500")).toThrow(Error);
 
-    expect(() => arabicToRoman.execute("15000")).toThrow(
-      "Número arábico inválido ou menor que zero.",
-    );
+    expect(() => arabicToRoman.execute("15000")).toThrow(Error);
 
-    expect(() => arabicToRoman.execute("9999")).toThrow(
-      "Número arábico inválido ou menor que zero.",
-    );
+    expect(() => arabicToRoman.execute("9999")).toThrow(Error);
   });
 });

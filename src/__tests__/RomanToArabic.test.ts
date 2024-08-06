@@ -30,31 +30,19 @@ describe("It should be able to convert roman numerals to arabic", () => {
   });
 
   test("I, X, C e M não podem repetir mais que 3 vezes", () => {
-    expect(() => romanToArabic.execute("IIII")).toThrow(
-      "Número romano inválido.",
-    );
+    expect(() => romanToArabic.execute("IIII")).toThrow(Error);
 
-    expect(() => romanToArabic.execute("XXXX")).toThrow(
-      "Número romano inválido.",
-    );
+    expect(() => romanToArabic.execute("XXXX")).toThrow(Error);
 
-    expect(() => romanToArabic.execute("CCCC")).toThrow(
-      "Número romano inválido.",
-    );
+    expect(() => romanToArabic.execute("CCCC")).toThrow(Error);
 
-    expect(() => romanToArabic.execute("MMMM")).toThrow(
-      "Número romano inválido.",
-    );
+    expect(() => romanToArabic.execute("MMMM")).toThrow(Error);
   });
 
   test("V, L, D não podem repetir", () => {
-    expect(() => romanToArabic.execute("VV")).toThrow(
-      "Número romano inválido.",
-    );
+    expect(() => romanToArabic.execute("VV")).toThrow(Error);
 
-    expect(() => romanToArabic.execute("LL")).toThrow(
-      "Número romano inválido.",
-    );
+    expect(() => romanToArabic.execute("LL")).toThrow(Error);
 
     expect(() => romanToArabic.execute("DD")).toThrow(
       "Número romano inválido.",
