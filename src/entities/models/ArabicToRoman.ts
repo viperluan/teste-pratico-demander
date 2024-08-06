@@ -14,7 +14,7 @@ export class ArabicToRoman {
     const isAValidArabicNumber = this.#validator.validate(arabic);
 
     if (!isAValidArabicNumber) {
-      throw new Error("Número arábico inválido ou menor que zero.");
+      throw new Error("Número arábico inválido ou menor/igual a zero.");
     }
 
     const convertedNumber = this.#converter.convert(arabic);
