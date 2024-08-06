@@ -52,7 +52,7 @@ const Converter = () => {
         <div className="p-8">
           <Input
             className="py-2 px-4"
-            placeholder="Type a roman number"
+            placeholder="Digite um número romano"
             value={inputRomanNumber}
             onInput={handleRomanNumberChange}
           />
