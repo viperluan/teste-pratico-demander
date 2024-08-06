@@ -26,20 +26,22 @@ const TreeMapContainer = ({ data }: ITreemapProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const interpolateColor = (percentage: number) => {
-    const startColor = [0, 100, 0]; // Verde escuro (RGB)
-    const endColor = [144, 238, 144]; // Verde claro (RGB)
+    const startColor = [144, 238, 144]; // Verde claro (RGB)
+    const endColor = [0, 100, 0]; // Verde escuro (RGB)
 
+    // Interpolação de cores
     const r = Math.round(
-      startColor[0] + percentage * (endColor[0] - startColor[0]),
+      startColor[0] + (1 + percentage) * (endColor[0] - startColor[0]),
     );
     const g = Math.round(
-      startColor[1] + percentage * (endColor[1] - startColor[1]),
+      startColor[1] + (1 + percentage) * (endColor[1] - startColor[1]),
     );
     const b = Math.round(
-      startColor[2] + percentage * (endColor[2] - startColor[2]),
+      startColor[2] + (1 + percentage) * (endColor[2] - startColor[2]),
     );
 
-    return `rgb(${r}, ${g}, ${b})`;
+    // Retorna cor no formato rgba com opacidade 1 (opcionalmente, pode ajustar a opacidade se desejar)
+    return `rgba(${r}, ${g}, ${b}, 1)`;
   };
 
   const createTreemapNode = (data: DataType[], x = 0, y = 0) => {
