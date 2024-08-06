@@ -10,7 +10,7 @@ const BackButton = (props: PropsWithChildren<IBackButtonProps>) => {
 
   return (
     <button
-      className="bg-slate-700 py-2 px-4 rounded"
+      className="bg-slate-700 py-2 px-4 rounded absolute top-4 left-4"
       onClick={() => navigate(-1)}
       {...props}
     >
