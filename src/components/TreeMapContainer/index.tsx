@@ -143,7 +143,7 @@ const TreeMapContainer = ({ data }: ITreemapProps) => {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative w-full h-3/4 bg-slate-600">
+    <div ref={containerRef} className="relative w-full h-4/6 bg-slate-600">
       {renderTreemapNode()}
     </div>
   );
