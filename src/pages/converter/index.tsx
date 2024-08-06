@@ -46,7 +46,7 @@ const Converter = () => {
       <main className="h-full flex flex-col px-8 items-center justify-center text-center">
         <BackButton>Voltar</BackButton>
 
-        <h1 className="text-5xl mb-4">Conversor</h1>
+        <h1 className="text-5xl mb-8">Conversor</h1>
         <h2 className="text-2xl">Números Romanos para Arábicos</h2>
 
         <div className="p-8">
