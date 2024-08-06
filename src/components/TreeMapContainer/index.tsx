@@ -49,13 +49,16 @@ const TreeMapContainer = ({ data }: ITreemapProps) => {
       return [];
     }
 
-    const total = data.reduce((sum, { value }) => sum + value, 0);
+    // Ordena do maior para o menor
+    const ordenedData = data.sort((a, b) => b.value - a.value);
+
+    const total = ordenedData.reduce((sum, { value }) => sum + value, 0);
     const isVerticalSplit = width > height;
     const areaFactor = (isVerticalSplit ? width : height) / total;
 
     let offset = 0;
 
-    const createdNodes = data.map(({ name, value }) => {
+    const createdNodes = ordenedData.map(({ name, value }) => {
       const itemSize = value * areaFactor;
       const percentage = value / total;
 
