@@ -25,8 +25,6 @@ export class ArabicToRomanConverter implements INumberConverter {
     let arabicNumber = +arabic;
     let result = "";
 
-    console.log(Object.entries(this.#arabicToRomanMap));
-
     for (const [value, numeral] of Object.entries(
       this.#arabicToRomanMap,
     ).reverse()) {
