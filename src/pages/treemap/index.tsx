@@ -1,7 +1,7 @@
 import { ChangeEvent, useState } from "react";
 import { BackButton } from "../../components/BackButton";
 import { TreeMapContainer } from "../../components/TreeMapContainer";
-import { JsonToText } from "../../entities/models/Treemap/JsonToText";
+import { JsonToText } from "../../entities/services/Treemap/JsonToText";
 
 interface ITreemapData {
   name: string;

@@ -1,6 +1,6 @@
 import { ITreemapData } from "../../interfaces/ITreemapData";
-import { JsonReaderFile } from "../../services/Treemap/JsonReaderFile";
-import { JsonValidatorFile } from "../../services/Treemap/JsonValidatorFile";
+import { JsonReaderFile } from "./JsonReaderFile";
+import { JsonValidatorFile } from "./JsonValidatorFile";
 
 interface ITreemapExecuteData {
   jsonReadData: ITreemapData[];
