@@ -1,6 +1,7 @@
 import { ChangeEvent, useState } from "react";
 import { BackButton } from "../../components/BackButton";
 import { TreeMapContainer } from "../../components/TreeMapContainer";
+import { JsonReader } from "../../entities/models/JsonReader";
 
 interface ITreemapData {
   name: string;
@@ -19,24 +20,24 @@ const initialData: ITreemapData[] = [
 const TreeMap = () => {
   const [loadedData, setLoadedData] = useState<ITreemapData[]>(initialData);
 
-  const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
+  const handleFileChange = async (event: ChangeEvent<HTMLInputElement>) => {
+    const jsonBlob = event.target.files?.[0];
 
-    if (file && file.type === "application/json") {
+    if (jsonBlob) {
       const reader = new FileReader();
+      const jsonReader = new JsonReader(jsonBlob, reader);
 
-      reader.onload = (e: ProgressEvent<FileReader>) => {
-        try {
-          const data = JSON.parse(e.target?.result as string);
-          setLoadedData(data);
-        } catch (error) {
-          setLoadedData(initialData);
-        }
-      };
+      const { jsonReadData, errorMessage } = await jsonReader.execute();
 
-      reader.readAsText(file);
-    } else {
-      setLoadedData(initialData);
+      if (errorMessage) {
+        alert(errorMessage);
+        setLoadedData(initialData);
+        return;
+      }
+
+      if (jsonReadData) {
+        setLoadedData(jsonReadData);
+      }
     }
   };
 
