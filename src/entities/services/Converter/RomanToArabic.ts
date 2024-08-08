@@ -1,5 +1,5 @@
-import { INumberConverter } from "../interfaces/NumberConverter";
-import { INumberValidator } from "../interfaces/NumberValidator";
+import { INumberConverter } from "../../interfaces/INumberConverter";
+import { INumberValidator } from "../../interfaces/INumberValidator";
 
 export class RomanToArabic {
   #validator: INumberValidator;

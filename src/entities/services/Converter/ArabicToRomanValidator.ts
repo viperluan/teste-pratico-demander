@@ -1,4 +1,4 @@
-import { INumberValidator } from "../interfaces/NumberValidator";
+import { INumberValidator } from "../../interfaces/INumberValidator";
 
 export class ArabicToRomanValidator implements INumberValidator {
   validate(number: string): boolean {
