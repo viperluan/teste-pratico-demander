@@ -1,6 +1,6 @@
-import { ArabicToRoman } from "../entities/models/ArabicToRoman";
-import { ArabicToRomanConverter } from "../entities/models/ArabicToRomanConverter";
-import { ArabicToRomanValidator } from "../entities/models/ArabicToRomanValidator";
+import { ArabicToRoman } from "../entities/services/Converter/ArabicToRoman";
+import { ArabicToRomanConverter } from "../entities/services/Converter/ArabicToRomanConverter";
+import { ArabicToRomanValidator } from "../entities/services/Converter/ArabicToRomanValidator";
 
 describe("It should be able to convert arabic numerals to roman", () => {
   let arabicToRoman: ArabicToRoman;

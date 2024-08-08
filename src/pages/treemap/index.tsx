@@ -1,7 +1,7 @@
 import { ChangeEvent, useState } from "react";
 import { BackButton } from "../../components/BackButton";
 import { TreeMapContainer } from "../../components/TreeMapContainer";
-import { JsonReader } from "../../entities/models/JsonReader";
+import { JsonToText } from "../../entities/models/Treemap/JsonToText";
 
 interface ITreemapData {
   name: string;
@@ -21,11 +21,10 @@ const TreeMap = () => {
   const [loadedData, setLoadedData] = useState<ITreemapData[]>(initialData);
 
   const handleFileChange = async (event: ChangeEvent<HTMLInputElement>) => {
-    const jsonBlob = event.target.files?.[0];
+    const jsonBlobFile = event.target.files?.[0];
 
-    if (jsonBlob) {
-      const reader = new FileReader();
-      const jsonReader = new JsonReader(jsonBlob, reader);
+    if (jsonBlobFile) {
+      const jsonReader = new JsonToText(jsonBlobFile);
 
       const { jsonReadData, errorMessage } = await jsonReader.execute();
 

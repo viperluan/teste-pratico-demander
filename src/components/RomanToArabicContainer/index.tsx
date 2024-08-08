@@ -1,8 +1,8 @@
 import { ChangeEvent, useEffect, useState } from "react";
 import { Input } from "../Input";
-import { RomanToArabic } from "../../entities/models/RomanToArabic";
-import { RomanToArabicValidator } from "../../entities/models/RomanToArabicValidator";
-import { RomanToArabicConverter } from "../../entities/models/RomanToArabicConverter";
+import { RomanToArabic } from "../../entities/services/Converter/RomanToArabic";
+import { RomanToArabicValidator } from "../../entities/services/Converter/RomanToArabicValidator";
+import { RomanToArabicConverter } from "../../entities/services/Converter/RomanToArabicConverter";
 
 const RomanToArabicContainer = () => {
   const [inputRomanNumber, setInputRomanNumber] = useState("");
